@@ -122,7 +122,8 @@ public class View {
 			System.out.println("Location: " + vehicle.getLocationName());
 			System.out.println("ZipCode: " + vehicle.getZipCode());
 			System.out.println("Rental Rate: " + vehicle.getRentalRate());
-			System.out.println("Number Available: " + vehicle.getVehicleRentCount());
+			System.out.println("Number Rented: " + vehicle.getVehicleRentCount());
+			System.out.println("Number Available: " + (vehicle.getVehicleCount() - vehicle.getVehicleRentCount()));
 			System.out.println("Total Vehicles: " + vehicle.getVehicleCount());
 			System.out.println("-------------------------------\n");
 		}
