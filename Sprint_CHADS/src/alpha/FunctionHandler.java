@@ -84,7 +84,7 @@ public class FunctionHandler {
 		Vehicle[] output = filterByZip(new DatabaseHandler().output(), zipCode);
 		double dailyRevenue = 0;
 		for (Vehicle v : output) {
-			dailyRevenue = (v.getRentalRate() * v.getVehicleRentCount());
+			dailyRevenue += (v.getRentalRate() * v.getVehicleRentCount());
 		}
 		return dailyRevenue;
 	}
@@ -93,7 +93,7 @@ public class FunctionHandler {
 		Vehicle[] output = filterByName(new DatabaseHandler().output(), locationName);
 		double dailyRevenue = 0;
 		for (Vehicle v : output) {
-			dailyRevenue = (v.getRentalRate() * v.getVehicleRentCount());
+			dailyRevenue += (v.getRentalRate() * v.getVehicleRentCount());
 		}
 		return dailyRevenue;
 	}
