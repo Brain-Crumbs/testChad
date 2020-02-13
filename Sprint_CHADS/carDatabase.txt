@@ -1,0 +1,2 @@
+20.2,Seattle,98444,Chevy,Cobalt,30,12
+32.6,Tacoma,98409,Ford,Focus,50,28
