@@ -132,8 +132,9 @@ public class FunctionHandler {
 				new DatabaseHandler().input(v);
 				numberChecked = true;
 
-			} catch (NumberFormatException | IOException e) {
+			} catch (NumberFormatException e) {
 				System.out.println("BRO, THAT IS NOT COOL!");
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -171,8 +172,9 @@ public class FunctionHandler {
 				new DatabaseHandler().input(v);
 				numberChecked = true;
 
-			} catch (NumberFormatException | IOException e) {
+			} catch (NumberFormatException e) {
 				System.out.println("BRO, THAT IS NOT COOL!");
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -210,8 +212,9 @@ public class FunctionHandler {
 				new DatabaseHandler().input(v);
 				numberChecked = true;
 
-			} catch (NumberFormatException | IOException e) {
+			} catch (NumberFormatException e) {
 				System.out.println("BRO, THAT IS NOT COOL!");
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -273,8 +276,9 @@ public class FunctionHandler {
 				new DatabaseHandler().removeVehicle(v);
 				numberChecked = true;
 
-			} catch (NumberFormatException | IOException e) {
+			} catch (NumberFormatException e) {
 				System.out.println("BRO, THAT IS NOT COOL!");
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
@@ -303,8 +307,9 @@ public class FunctionHandler {
 				new DatabaseHandler().removeVehicle(v);
 				numberChecked = true;
 
-			} catch (NumberFormatException | IOException e) {
+			} catch (NumberFormatException e) {
 				System.out.println("BRO, THAT IS NOT COOL!");
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
