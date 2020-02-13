@@ -61,6 +61,7 @@ public class DatabaseHandler {
 						Integer.parseInt(temp[6])
 								);
 				count++;
+			
 			}
 			
 			br.close();
