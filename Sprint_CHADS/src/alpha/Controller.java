@@ -19,12 +19,13 @@ public class Controller {
 			}
 			if (menuOption == Chad.ERROR) {
 				View.displayError();
+			}
 			if (menuOption == Chad.ADDVEHICLE) {
 				FunctionHandler.addVehicle();
 			}
 			if (menuOption == Chad.REMOVEVEHICLE) {
 				FunctionHandler.removeVehicle();
-			}
+			
 			} else {
 				Handler(menuOption);
 			}
