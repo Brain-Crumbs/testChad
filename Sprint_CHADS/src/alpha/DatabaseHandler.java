@@ -137,6 +137,6 @@ public class DatabaseHandler {
 		return length;
 	}
 	
-	//test commen
+	//test comment blah
 
 }
