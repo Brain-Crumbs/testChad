@@ -15,6 +15,8 @@ public class View {
 		case "0": return Chad.DISPLAYALL;
 		case "1": return Chad.NAME;
 		case "2": return Chad.ZIPCODE;
+		case "3": return Chad.ADDVEHICLE;
+		case "4": return Chad.REMOVEVEHICLE;
 		case "sub.0": return Chad.OUTPUTALL;
 		case "sub.1": return Chad.OUTPUTDAILYRATE;
 		case "sub.2": return Chad.AVAILABLEVEHICLES;
@@ -40,6 +42,8 @@ public class View {
 		System.out.println("Display all rentals:        Enter 0");
 		System.out.println("Search rentals by location: Enter 1");
 		System.out.println("Search rentals by zipcode:  Enter 2");
+		System.out.println("Add Vehicle:                Enter 3");
+		System.out.println("Remove Vehicle:             Enter 4");
 		System.out.println("Quit:                       Enter Q");
 		System.out.println();
 		
