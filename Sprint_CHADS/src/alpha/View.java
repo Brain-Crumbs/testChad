@@ -3,11 +3,13 @@ package alpha;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.NumberFormat;
 import java.util.List;
 import java.util.Scanner;
 
 public class View {
 	
+	static NumberFormat nf = NumberFormat.getCurrencyInstance();
 	
 	public static Chad inputHandler(String input) {
 		
@@ -123,7 +125,7 @@ public class View {
 			System.out.println("Make and Model: " + vehicle.getMake() + " " + vehicle.getModel());
 			System.out.println("Location: " + vehicle.getLocationName());
 			System.out.println("ZipCode: " + vehicle.getZipCode());
-			System.out.println("Rental Rate: " + vehicle.getRentalRate());
+			System.out.println("Rental Rate: " + nf.format(vehicle.getRentalRate()));
 			System.out.println("Number Rented: " + vehicle.getVehicleRentCount());
 			System.out.println("Number Available: " + (vehicle.getVehicleCount() - vehicle.getVehicleRentCount()));
 			System.out.println("Total Vehicles: " + vehicle.getVehicleCount());
@@ -141,12 +143,12 @@ public class View {
 	public static void displayOutput(Double output, Chad rateOrRevenue) {
 		if (rateOrRevenue == Chad.DAILYREVENUE) {
 			System.out.println("----------TOTAL REVENUE-------\n");
-			System.out.println("Total Revenue: " + output);
+			System.out.println("Total Revenue: " + nf.format(output));
 			System.out.println("------------------------------\n");
 		}
 		if (rateOrRevenue == Chad.OUTPUTDAILYRATE) {
 			System.out.println("----------RENTAL RATE-------\n");
-			System.out.println("Rental Rate: " + output);
+			System.out.println("Rental Rate: " + nf.format(output));
 			System.out.println("------------------------------\n");
 		}
 	}
