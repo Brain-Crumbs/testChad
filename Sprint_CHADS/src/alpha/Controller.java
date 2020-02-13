@@ -58,10 +58,10 @@ public class Controller {
 					View.displayOutput(dailyRevenue, subMenuOption);
 				}
 				if (subMenuOption == Chad.ADDVEHICLE) {
-					addVehicle();
+					addVehicle(zip);
 				}
 				if (subMenuOption == Chad.REMOVEVEHICLE) {
-					removeVehicle();
+					removeVehicle(zip);
 				}
 				if (subMenuOption == Chad.ERROR) {
 					View.displayError();
@@ -98,10 +98,10 @@ public class Controller {
 					View.displayOutput(dailyRevenue, subMenuOption);
 				}
 				if (subMenuOption == Chad.ADDVEHICLE) {
-					addVehicle();
+					addVehicle(locationName);
 				}
 				if (subMenuOption == Chad.REMOVEVEHICLE) {
-					removeVehicle();
+					removeVehicle(locationName);
 				}
 				if (subMenuOption == Chad.ERROR) {
 					View.displayError();
@@ -250,6 +250,84 @@ public class Controller {
 		}
 	}
 	
+	static void addVehicle(int zip) {
+		double rentalRate;
+		String locationName;
+		int zipCode = zip;
+		String make;
+		String model;
+		int totalVehicles;
+		int totalVehiclesRented;
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		boolean numberChecked = false;
+		while (!numberChecked) {
+			try {
+
+				System.out.println("Please enter the rental rate: ");
+				rentalRate = Double.parseDouble(br.readLine());
+				System.out.println("Please enter the location name: ");
+				locationName = br.readLine();
+				System.out.println("Please enter the vehicle make: ");
+				make = br.readLine();
+				System.out.println("Please enter the vehicle model: ");
+				model = br.readLine();
+				System.out.println("Please enter the total vehicles: ");
+				totalVehicles = Integer.parseInt(br.readLine());
+				System.out.println("Please enter the total vehicles rented: ");
+				totalVehiclesRented = Integer.parseInt(br.readLine());
+
+				Vehicle v = new Vehicle(rentalRate, locationName, zipCode, make, model, totalVehicles,
+						totalVehiclesRented);
+				new DatabaseHandler().input(v);
+				numberChecked = true;
+
+			} catch (NumberFormatException | IOException e) {
+				System.out.println("BRO, THAT IS NOT COOL!");
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	static void addVehicle(String locationNameIn) {
+		double rentalRate;
+		String locationName = locationNameIn;
+		int zipCode;
+		String make;
+		String model;
+		int totalVehicles;
+		int totalVehiclesRented;
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		boolean numberChecked = false;
+		while (!numberChecked) {
+			try {
+
+				System.out.println("Please enter the rental rate: ");
+				rentalRate = Double.parseDouble(br.readLine());
+				System.out.println("Please enter the zip code: ");
+				zipCode = Integer.parseInt(br.readLine());
+				System.out.println("Please enter the vehicle make: ");
+				make = br.readLine();
+				System.out.println("Please enter the vehicle model: ");
+				model = br.readLine();
+				System.out.println("Please enter the total vehicles: ");
+				totalVehicles = Integer.parseInt(br.readLine());
+				System.out.println("Please enter the total vehicles rented: ");
+				totalVehiclesRented = Integer.parseInt(br.readLine());
+
+				Vehicle v = new Vehicle(rentalRate, locationName, zipCode, make, model, totalVehicles,
+						totalVehiclesRented);
+				new DatabaseHandler().input(v);
+				numberChecked = true;
+
+			} catch (NumberFormatException | IOException e) {
+				System.out.println("BRO, THAT IS NOT COOL!");
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	static void removeVehicle() {
 		String locationName;
 		int zipCode;
@@ -265,6 +343,66 @@ public class Controller {
 				locationName = br.readLine();
 				System.out.println("Please enter the zip code: ");
 				zipCode = Integer.parseInt(br.readLine());
+				System.out.println("Please enter the vehicle make: ");
+				make = br.readLine();
+				System.out.println("Please enter the vehicle model: ");
+				model = br.readLine();
+				
+				Vehicle v = new Vehicle(0.0, locationName, zipCode, make, model, 0,
+						0);
+				new DatabaseHandler().removeVehicle(v);
+				numberChecked = true;
+
+			} catch (NumberFormatException | IOException e) {
+				System.out.println("BRO, THAT IS NOT COOL!");
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	static void removeVehicle(String locationNameIn) {
+		String locationName = locationNameIn;
+		int zipCode;
+		String make;
+		String model;
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		boolean numberChecked = false;
+		while (!numberChecked) {
+			try {
+				
+				System.out.println("Please enter the zip code: ");
+				zipCode = Integer.parseInt(br.readLine());
+				System.out.println("Please enter the vehicle make: ");
+				make = br.readLine();
+				System.out.println("Please enter the vehicle model: ");
+				model = br.readLine();
+				
+				Vehicle v = new Vehicle(0.0, locationName, zipCode, make, model, 0,
+						0);
+				new DatabaseHandler().removeVehicle(v);
+				numberChecked = true;
+
+			} catch (NumberFormatException | IOException e) {
+				System.out.println("BRO, THAT IS NOT COOL!");
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	static void removeVehicle(int zip) {
+		String locationName;
+		int zipCode = zip;
+		String make;
+		String model;
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		boolean numberChecked = false;
+		while (!numberChecked) {
+			try {
+				
+				System.out.println("Please enter the location name: ");
+				locationName = br.readLine();
 				System.out.println("Please enter the vehicle make: ");
 				make = br.readLine();
 				System.out.println("Please enter the vehicle model: ");
