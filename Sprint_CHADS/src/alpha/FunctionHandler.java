@@ -3,7 +3,7 @@ package alpha;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+//brah
 public class FunctionHandler {
 	
 	static Vehicle[] filterByZip(Vehicle[] v, int zipCode) {
@@ -84,7 +84,7 @@ public class FunctionHandler {
 		Vehicle[] output = filterByZip(new DatabaseHandler().output(), zipCode);
 		double dailyRevenue = 0;
 		for (Vehicle v : output) {
-			dailyRevenue = (v.getRentalRate() * v.getVehicleRentCount());
+			dailyRevenue += (v.getRentalRate() * v.getVehicleRentCount());
 		}
 		return dailyRevenue;
 	}
@@ -93,7 +93,7 @@ public class FunctionHandler {
 		Vehicle[] output = filterByName(new DatabaseHandler().output(), locationName);
 		double dailyRevenue = 0;
 		for (Vehicle v : output) {
-			dailyRevenue = (v.getRentalRate() * v.getVehicleRentCount());
+			dailyRevenue += (v.getRentalRate() * v.getVehicleRentCount());
 		}
 		return dailyRevenue;
 	}
