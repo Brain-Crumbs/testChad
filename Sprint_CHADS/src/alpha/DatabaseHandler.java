@@ -137,6 +137,6 @@ public class DatabaseHandler {
 		return length;
 	}
 	
-	//Chad comment, push it NOW 
+	//Chad comment, push it baby 
 
 }
