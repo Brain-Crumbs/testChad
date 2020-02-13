@@ -106,26 +106,24 @@ public class FunctionHandler {
 		String model;
 		int totalVehicles;
 		int totalVehiclesRented;
-
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		boolean numberChecked = false;
 		while (!numberChecked) {
 			try {
 
 				System.out.println("Please enter the rental rate: ");
-				rentalRate = Double.parseDouble(br.readLine());
+				rentalRate = Double.parseDouble(getInput());
 				System.out.println("Please enter the location name: ");
-				locationName = br.readLine();
+				locationName = getInput();
 				System.out.println("Please enter the zip code: ");
-				zipCode = Integer.parseInt(br.readLine());
+				zipCode = Integer.parseInt(getInput());
 				System.out.println("Please enter the vehicle make: ");
-				make = br.readLine();
+				make = getInput();
 				System.out.println("Please enter the vehicle model: ");
-				model = br.readLine();
+				model = getInput();
 				System.out.println("Please enter the total vehicles: ");
-				totalVehicles = Integer.parseInt(br.readLine());
+				totalVehicles = Integer.parseInt(getInput());
 				System.out.println("Please enter the total vehicles rented: ");
-				totalVehiclesRented = Integer.parseInt(br.readLine());
+				totalVehiclesRented = Integer.parseInt(getInput());
 
 				Vehicle v = new Vehicle(rentalRate, locationName, zipCode, make, model, totalVehicles,
 						totalVehiclesRented);
@@ -136,6 +134,10 @@ public class FunctionHandler {
 				System.out.println("BRO, THAT IS NOT COOL!");
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				if(e.getMessage().equalsIgnoreCase("quit")) {
+					break;
+				}
 			}
 		}
 	}
@@ -149,23 +151,22 @@ public class FunctionHandler {
 		int totalVehicles;
 		int totalVehiclesRented;
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		boolean numberChecked = false;
 		while (!numberChecked) {
 			try {
 
 				System.out.println("Please enter the rental rate: ");
-				rentalRate = Double.parseDouble(br.readLine());
+				rentalRate = Double.parseDouble(getInput());
 				System.out.println("Please enter the location name: ");
-				locationName = br.readLine();
+				locationName = getInput();
 				System.out.println("Please enter the vehicle make: ");
-				make = br.readLine();
+				make = getInput();
 				System.out.println("Please enter the vehicle model: ");
-				model = br.readLine();
+				model = getInput();
 				System.out.println("Please enter the total vehicles: ");
-				totalVehicles = Integer.parseInt(br.readLine());
+				totalVehicles = Integer.parseInt(getInput());
 				System.out.println("Please enter the total vehicles rented: ");
-				totalVehiclesRented = Integer.parseInt(br.readLine());
+				totalVehiclesRented = Integer.parseInt(getInput());
 
 				Vehicle v = new Vehicle(rentalRate, locationName, zipCode, make, model, totalVehicles,
 						totalVehiclesRented);
@@ -176,6 +177,10 @@ public class FunctionHandler {
 				System.out.println("BRO, THAT IS NOT COOL!");
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				if(e.getMessage().equalsIgnoreCase("quit")) {
+					break;
+				}
 			}
 		}
 	}
@@ -189,23 +194,22 @@ public class FunctionHandler {
 		int totalVehicles;
 		int totalVehiclesRented;
 
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		boolean numberChecked = false;
 		while (!numberChecked) {
 			try {
 
 				System.out.println("Please enter the rental rate: ");
-				rentalRate = Double.parseDouble(br.readLine());
+				rentalRate = Double.parseDouble(getInput());
 				System.out.println("Please enter the zip code: ");
-				zipCode = Integer.parseInt(br.readLine());
+				zipCode = Integer.parseInt(getInput());
 				System.out.println("Please enter the vehicle make: ");
-				make = br.readLine();
+				make = getInput();
 				System.out.println("Please enter the vehicle model: ");
-				model = br.readLine();
+				model = getInput();
 				System.out.println("Please enter the total vehicles: ");
-				totalVehicles = Integer.parseInt(br.readLine());
+				totalVehicles = Integer.parseInt(getInput());
 				System.out.println("Please enter the total vehicles rented: ");
-				totalVehiclesRented = Integer.parseInt(br.readLine());
+				totalVehiclesRented = Integer.parseInt(getInput());
 
 				Vehicle v = new Vehicle(rentalRate, locationName, zipCode, make, model, totalVehicles,
 						totalVehiclesRented);
@@ -216,6 +220,10 @@ public class FunctionHandler {
 				System.out.println("BRO, THAT IS NOT COOL!");
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				if(e.getMessage().equalsIgnoreCase("quit")) {
+					break;
+				}
 			}
 		}
 	}
@@ -226,19 +234,18 @@ public class FunctionHandler {
 		String make;
 		String model;
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		boolean numberChecked = false;
 		while (!numberChecked) {
 			try {
 				
 				System.out.println("Please enter the location name: ");
-				locationName = br.readLine();
+				locationName = getInput();
 				System.out.println("Please enter the zip code: ");
-				zipCode = Integer.parseInt(br.readLine());
+				zipCode = Integer.parseInt(getInput());
 				System.out.println("Please enter the vehicle make: ");
-				make = br.readLine();
+				make = getInput();
 				System.out.println("Please enter the vehicle model: ");
-				model = br.readLine();
+				model = getInput();
 				
 				Vehicle v = new Vehicle(0.0, locationName, zipCode, make, model, 0,
 						0);
@@ -249,6 +256,10 @@ public class FunctionHandler {
 				System.out.println("BRO, THAT IS NOT COOL!");
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				if(e.getMessage().equalsIgnoreCase("quit")) {
+					break;
+				}
 			}
 		}
 	}
@@ -258,18 +269,16 @@ public class FunctionHandler {
 		int zipCode;
 		String make;
 		String model;
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		boolean numberChecked = false;
 		while (!numberChecked) {
 			try {
 				
 				System.out.println("Please enter the zip code: ");
-				zipCode = Integer.parseInt(br.readLine());
+				zipCode = Integer.parseInt(getInput());
 				System.out.println("Please enter the vehicle make: ");
-				make = br.readLine();
+				make = getInput();
 				System.out.println("Please enter the vehicle model: ");
-				model = br.readLine();
+				model = getInput();
 				
 				Vehicle v = new Vehicle(0.0, locationName, zipCode, make, model, 0,
 						0);
@@ -280,6 +289,10 @@ public class FunctionHandler {
 				System.out.println("BRO, THAT IS NOT COOL!");
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				if(e.getMessage().equalsIgnoreCase("quit")) {
+					break;
+				}
 			}
 		}
 	}
@@ -290,17 +303,16 @@ public class FunctionHandler {
 		String make;
 		String model;
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		boolean numberChecked = false;
 		while (!numberChecked) {
 			try {
 				
 				System.out.println("Please enter the location name: ");
-				locationName = br.readLine();
+				locationName = getInput();
 				System.out.println("Please enter the vehicle make: ");
-				make = br.readLine();
+				make = getInput();
 				System.out.println("Please enter the vehicle model: ");
-				model = br.readLine();
+				model = getInput();
 				
 				Vehicle v = new Vehicle(0.0, locationName, zipCode, make, model, 0,
 						0);
@@ -311,10 +323,22 @@ public class FunctionHandler {
 				System.out.println("BRO, THAT IS NOT COOL!");
 			} catch (IOException e) {
 				e.printStackTrace();
+			} catch (Exception e) {
+				if(e.getMessage().equalsIgnoreCase("quit")) {
+					break;
+				}
 			}
 		}
 	}
 	
-	
+	static String getInput() throws IOException, Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String output = br.readLine();
+		if(output.equalsIgnoreCase("quit") || output.equalsIgnoreCase("q")){
+			throw new Exception("quit");
+		} else {
+		return output;
+		}
+	}
 
 }
