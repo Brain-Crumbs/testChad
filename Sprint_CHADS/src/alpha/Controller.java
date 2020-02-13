@@ -82,7 +82,7 @@ public class Controller {
 				Chad subMenuOption = View.inputHandler(View.displaySubMenu(locationName));
 
 				if (subMenuOption == Chad.OUTPUTALL) {
-					Vehicle[] vehiclesOut = new DatabaseHandler().output();
+					Vehicle[] vehiclesOut = filterByName(new DatabaseHandler().output(), locationName);
 					View.displayOutput(vehiclesOut);
 				}
 				if (subMenuOption == Chad.AVAILABLEVEHICLES) {
