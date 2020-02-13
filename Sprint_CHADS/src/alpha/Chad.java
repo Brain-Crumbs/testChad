@@ -6,6 +6,8 @@ public enum Chad {
 	DAILYREVENUE,NAME,ADDVEHICLE,REMOVEVEHICLE,QUIT,ERROR,
 	OUTPUTALL, RETURNTOMAIN;
 	
+	//Hello all Chads
+	
 	private String Chad() {
 		switch(ordinal()) {
 		case 0:
