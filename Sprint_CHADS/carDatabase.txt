@@ -16,3 +16,4 @@
 54.5,Tacoma,98409,Mercedez,Benz,10,8
 54.5,Bellevue Downtown,98004,Mercedez,Benz,10,8
 54.5,Seattle Pine,98444,Mercedez,Benz,10,8
+34.2,northgate,98333,pontiac,vibe,10,0
