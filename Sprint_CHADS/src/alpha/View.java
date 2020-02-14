@@ -205,7 +205,7 @@ public class View {
 		clear();
 		System.out.println("---NUMBER AVAILABLE RENTALS---\n");
 		System.out.println("Number rentals Available: " + noVehicles);
-		System.out.println("------------------------------\\n");
+		System.out.println("-------------------------------\n");
 		
 		System.out.println("Press Enter To Continue");
 		getInput();
