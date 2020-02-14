@@ -26,7 +26,12 @@ public class Controller {
 			if (menuOption == Chad.REMOVEVEHICLE) {
 				FunctionHandler.removeVehicle();
 			
-			} else {
+			}if(menuOption == Chad.LOCATIONNAMES) {
+				//Vehicle v = new Vehicle();
+				
+				FunctionHandler.getLocations();
+			}
+			else {
 				Handler(menuOption);
 			}
 
