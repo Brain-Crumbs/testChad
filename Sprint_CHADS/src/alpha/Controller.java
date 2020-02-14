@@ -26,7 +26,52 @@ public class Controller {
 			if (menuOption == Chad.REMOVEVEHICLE) {
 				FunctionHandler.removeVehicle();
 			
-			} else {
+			}if(menuOption == Chad.LOCATIONNAMES) {
+				//Vehicle v = new Vehicle();
+				
+				if(menuOption == Chad.LOCATIONNAMES) {
+					//Vehicle v = new Vehicle();
+					
+					View.displayLocationNames(FunctionHandler.getLocations());
+					String locationName = View.getName();
+					while(true) {
+						Chad subMenuOption = View.inputHandler(View.displaySubMenu(locationName));
+
+						if (subMenuOption == Chad.OUTPUTALL) {
+							Vehicle[] vehiclesOut = FunctionHandler.filterByName(new DatabaseHandler().output(), locationName);
+							View.displayOutput(vehiclesOut);
+						}
+						if (subMenuOption == Chad.AVAILABLEVEHICLES) {
+							int noVehicles = FunctionHandler.getAvailableVehicles(locationName);
+							View.displayOutput(noVehicles);
+						}
+						if (subMenuOption == Chad.OUTPUTDAILYRATE) {
+							double dailyRate = FunctionHandler.getDailyRate(locationName);
+							View.displayOutput(dailyRate, subMenuOption);
+						}
+						if (subMenuOption == Chad.DAILYREVENUE) {
+							Double dailyRevenue = FunctionHandler.getDailyRevenue(locationName);
+							View.displayOutput(dailyRevenue, subMenuOption);
+						}
+						if (subMenuOption == Chad.ADDVEHICLE) {
+							FunctionHandler.addVehicle(locationName);
+						}
+						if (subMenuOption == Chad.REMOVEVEHICLE) {
+							FunctionHandler.removeVehicle(locationName);
+						}
+						if (subMenuOption == Chad.ERROR) {
+							View.displayError();
+						}
+						if (subMenuOption == Chad.RETURNTOMAIN) {
+							break;
+						}
+						if (subMenuOption == Chad.QUIT) {
+							View.displayExit();
+						}
+					}
+				}
+			}
+			else {
 				Handler(menuOption);
 			}
 

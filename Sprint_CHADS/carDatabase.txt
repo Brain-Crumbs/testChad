@@ -1,6 +1,6 @@
-20.2,Seattle,98444,Chevy,Cobalt,30,12
-32.6,Tacoma,98409,Ford,Focus,50,28
-30.2,Seattle,98101,Ford,Focus,20,10
-29.6,Tacoma,98409,Subaru,Impreza,40,10
-54.5,Bellevue,98004,Mercedez,Benz,10,6
-99.9,OMG,666,MAKE,MODEL,100,20
+20.2,Seattle1,98444,Chevy,Cobalt,30,12
+20.2,Seattle1,98444,Chevy,Cobalt,30,12
+32.6,Tacoma1,98409,Ford,Focus,50,28
+30.2,Seattle2,98444,Ford,Focus,20,10
+29.6,Tacoma2,98409,Subaru,Impreza,40,10
+54.5,Bellevue,98004,Mercedez,Benz,10,

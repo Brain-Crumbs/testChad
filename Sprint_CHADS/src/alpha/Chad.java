@@ -2,7 +2,7 @@ package alpha;
 
 public enum Chad {
 
-	DISPLAYALL,ZIPCODE,OUTPUTDAILYRATE,AVAILABLEVEHICLES,
+	DISPLAYALL,LOCATIONNAMES,ZIPCODE,OUTPUTDAILYRATE,AVAILABLEVEHICLES,
 	DAILYREVENUE,NAME,ADDVEHICLE,REMOVEVEHICLE,QUIT,ERROR,
 	OUTPUTALL, RETURNTOMAIN;
 	
@@ -13,26 +13,28 @@ public enum Chad {
 		case 0:
 			return "Display All";
 		case 1:
-			return "Zipcode";
+			return "LocationNames";
 		case 2:
-			return "OutputDailyRate";
+			return "Zipcode";
 		case 3:
-			return "AvailableVehicles";
+			return "OutputDailyRate";
 		case 4:
-			return "DailyRevenue";
+			return "AvailableVehicles";
 		case 5:
-			return "Name";
+			return "DailyRevenue";
 		case 6:
-			return "AddVehicle";
+			return "Name";
 		case 7:
-			return "RemoveVehicle";
+			return "AddVehicle";
 		case 8:
-			return "Quit";
+			return "RemoveVehicle";
 		case 9:
-			return "BRO!!";
+			return "Quit";
 		case 10:
-			return "OutputAll Bro";
+			return "BRO!!";
 		case 11:
+			return "OutputAll Bro";
+		case 12:
 			return "We are headed back to main Bro!";
 		default:
 			return null;
@@ -45,26 +47,28 @@ public enum Chad {
 		case 0:
 			return "Display All";
 		case 1:
-			return "Zipcode";
+			return "LocationNames";
 		case 2:
-			return "OutputDailyRate";
+			return "Zipcode";
 		case 3:
-			return "AvailableVehicles";
+			return "OutputDailyRate";
 		case 4:
-			return "DailyRevenue";
+			return "AvailableVehicles";
 		case 5:
-			return "Name";
+			return "DailyRevenue";
 		case 6:
-			return "AddVehicle";
+			return "Name";
 		case 7:
-			return "RemoveVehicle";
+			return "AddVehicle";
 		case 8:
-			return "Quit";
+			return "RemoveVehicle";
 		case 9:
-			return "BRO!!";
+			return "Quit";
 		case 10:
-			return "OutputAll Bro";
+			return "BRO!!";
 		case 11:
+			return "OutputAll Bro";
+		case 12:
 			return "We are headed back to main Bro!";
 		default:
 			return null;
