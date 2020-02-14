@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -122,17 +123,34 @@ public class View {
 	
 	public static void displayOutput(Vehicle[] vehicles) {
 		
-		for(Vehicle vehicle : vehicles) {
-			System.out.println("------------RENTALS------------\n");
-			System.out.println("Make and Model: " + vehicle.getMake() + " " + vehicle.getModel());
-			System.out.println("Location: " + vehicle.getLocationName());
-			System.out.println("ZipCode: " + vehicle.getZipCode());
-			System.out.println("Rental Rate: " + nf.format(vehicle.getRentalRate()));
-			System.out.println("Number Rented: " + vehicle.getVehicleRentCount());
-			System.out.println("Number Available: " + (vehicle.getVehicleCount() - vehicle.getVehicleRentCount()));
-			System.out.println("Total Vehicles: " + vehicle.getVehicleCount());
-			System.out.println("-------------------------------\n");
+		List<String> locs = new ArrayList<String>();
+		List<Integer> zips = new ArrayList<Integer>();
+		List<Vehicle[]> vZip = new ArrayList<Vehicle[]>();
+		
+		for (Vehicle v : vehicles) {
+			if (!zips.contains(v.getZipCode())) {
+				zips.add(v.getZipCode());
+				vZip.add(FunctionHandler.filterByZip(vehicles, v.getZipCode()));
+			}
 		}
+		
+		for (Vehicle[] vz : vZip) {
+			System.out.println("-----------------------------------------------");
+			System.out.println("ZipCode: " + vz[0].getZipCode() + "\n");
+			for (Vehicle v : vz) {
+				if (!locs.contains(v.getLocationName().toLowerCase())) {
+					locs.add(v.getLocationName().toLowerCase());
+					System.out.println("\tLocation: " + v.getLocationName() + "\n");
+				}
+				
+				System.out.println("\t" + v.getMake() + "" + v.getModel()
+						+ "\t" + v.getRentalRate() + "\t"
+						+ (v.getVehicleCount() - v.getVehicleRentCount()) + " Available\t"
+						+ v.getVehicleRentCount() + " Rented");
+			}
+			System.out.println("-----------------------------------------------");
+		}
+		
 	}
 	
 public static void displayLocationNames(Vehicle[] vehicles) {
