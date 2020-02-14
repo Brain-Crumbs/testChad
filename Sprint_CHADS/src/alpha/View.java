@@ -64,6 +64,7 @@ public class View {
 	}
 	
 	public static String displaySubMenu(String locationName) {
+		clear();
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.println("-------TravelWithChad.com BackOffice-------");
@@ -90,12 +91,12 @@ public class View {
 	
 	public static void displayLocationNames(HashSet<String> hashSet) {
 		
-		//for(Vehicle vehicle : vehicles) {
-		//if(Chad.LOCATIONNAMES != null) {
+			clear();
 			System.out.println("------------Locations------------\n");
 			System.out.println(FunctionHandler.getLocations() + "\n ");
 			System.out.println("-------------------------------\n");
-		//}
+			
+
 		}
 	
 	public static String displaySubMenu(int zip) {
@@ -103,7 +104,7 @@ public class View {
 	}
 
 	public static void displayError() {
-		
+		clear();
 		System.out.println(Chad.ERROR.toString());
 	}
 	
@@ -143,7 +144,7 @@ public class View {
 	}
 	
 	public static void displayOutput(Vehicle[] vehicles) {
-		
+		clear();
 		List<String> locs = new ArrayList<String>();
 		List<Integer> zips = new ArrayList<Integer>();
 		List<Vehicle[]> vZip = new ArrayList<Vehicle[]>();
@@ -183,47 +184,70 @@ public class View {
 		}
 		System.out.println("Press Enter To Continue");
 		getInput();
+		
 	}
 	
 	public static void displayLocationNames(Vehicle[] vehicles) {
+		clear();
+
+		System.out.println("------------Locations------------\n");
+		System.out.println(FunctionHandler.getLocations() + "\n ");
+		System.out.println("-------------------------------\n");
 		
-		//for(Vehicle vehicle : vehicles) {
-		//if(Chad.LOCATIONNAMES != null) {
-			System.out.println("------------Locations------------\n");
-			System.out.println(FunctionHandler.getLocations() + "\n ");
-			System.out.println("-------------------------------\n");
-		//}
+		System.out.println("Press Enter To Continue");
+		getInput();
+		
+
 		}
 	
-	//hello
+
 	public static void displayOutput(int noVehicles) {
-			
-			System.out.println("---NUMBER AVAILABLE RENTALS---\n");
-			System.out.println("Number rentals Available: " + noVehicles);
-			System.out.println("------------------------------\\n");
+		clear();
+		System.out.println("---NUMBER AVAILABLE RENTALS---\n");
+		System.out.println("Number rentals Available: " + noVehicles);
+		System.out.println("------------------------------\\n");
+		
+		System.out.println("Press Enter To Continue");
+		getInput();
+		
 	}
 	
 	public static void displayOutput(Double output, Chad rateOrRevenue) {
+		clear();
 		if (rateOrRevenue == Chad.DAILYREVENUE) {
 			System.out.println("----------TOTAL REVENUE-------\n");
 			System.out.println("Total Revenue: " + nf.format(output));
 			System.out.println("------------------------------\n");
+			
+			System.out.println("Press Enter To Continue");
+			getInput();
 		}
 		if (rateOrRevenue == Chad.OUTPUTDAILYRATE) {
 			System.out.println("----------RENTAL RATE-------\n");
 			System.out.println("Rental Rate: " + nf.format(output));
 			System.out.println("------------------------------\n");
+			
+			System.out.println("Press Enter To Continue");
+			getInput();
 		}
+		
 	}
 	
 	public static void displayOutput(String message) {
-		
+		clear();
 		System.out.println("\n" + message + "\n");
 		
 	}
 	
 	public static void displayExit() {
+		clear();
 		System.out.println("BRAH... I'M OUT!");
 		System.exit(0);
+	}
+	
+	public static void clear(){
+
+		for (int i = 0; i < 50; ++i) System.out.println();
+		
 	}
 }

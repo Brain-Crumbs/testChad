@@ -7,27 +7,31 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Controller {
-//BROH I COMMITED A COMMENT
 
 	public static void main(String[] args) {
 
 		while (true) {
 
+
 			Chad menuOption = View.inputHandler(View.displayMenu());
 			if (menuOption == Chad.QUIT) {
+
 				View.displayExit();
 			}
 			if (menuOption == Chad.ERROR) {
+
 				View.displayError();
 			}
 			if (menuOption == Chad.ADDVEHICLE) {
+
 				FunctionHandler.addVehicle();
 			}
 			if (menuOption == Chad.REMOVEVEHICLE) {
+
 				FunctionHandler.removeVehicle();
 			
 			}if(menuOption == Chad.LOCATIONNAMES) {
-					
+	
 				View.displayLocationNames(FunctionHandler.getLocations());
 				subMenuHandler(View.getName());
 			}
@@ -46,7 +50,7 @@ public class Controller {
 			View.displayOutput(new DatabaseHandler().output());
 			
 		} else if (menuOption == Chad.ZIPCODE) {
-	
+
 			subMenuHandler(Integer.parseInt(View.getZip()));
 				
 		} else if (menuOption == Chad.NAME) {
@@ -64,7 +68,7 @@ public class Controller {
 	
 			if (subMenuOption == Chad.OUTPUTALL) {
 				Vehicle[] vehiclesOut = FunctionHandler.filterByName(new DatabaseHandler().output(), locationName);
-				View.displayOutput(vehiclesOut);
+				View.displayOutput(vehiclesOut);	
 			}
 			if (subMenuOption == Chad.AVAILABLEVEHICLES) {
 				int noVehicles = FunctionHandler.getAvailableVehicles(locationName);
@@ -80,6 +84,7 @@ public class Controller {
 			}
 			if (subMenuOption == Chad.ADDVEHICLE) {
 				FunctionHandler.addVehicle(locationName);
+				
 			}
 			if (subMenuOption == Chad.REMOVEVEHICLE) {
 				FunctionHandler.removeVehicle(locationName);
@@ -88,6 +93,7 @@ public class Controller {
 				View.displayError();
 			}
 			if (subMenuOption == Chad.RETURNTOMAIN) {
+
 				break;
 			}
 			if (subMenuOption == Chad.QUIT) {
@@ -133,5 +139,6 @@ public class Controller {
 			}
 		}
 	}
+	
 
 }
