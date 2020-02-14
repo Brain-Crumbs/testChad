@@ -121,11 +121,23 @@ public class View {
 		return input;
 	}
 	
+	public static String getInput() {
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		String input = "";
+		try {
+			input = in.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return input;
+	}
+	
 	public static void displayOutput(Vehicle[] vehicles) {
 		
 		List<String> locs = new ArrayList<String>();
 		List<Integer> zips = new ArrayList<Integer>();
 		List<Vehicle[]> vZip = new ArrayList<Vehicle[]>();
+		String lineBreak = "-------------------------------------------------------";
 		
 		for (Vehicle v : vehicles) {
 			if (!zips.contains(v.getZipCode())) {
@@ -135,11 +147,12 @@ public class View {
 		}
 		
 		for (Vehicle[] vz : vZip) {
-			System.out.println("-----------------------------------------------");
+			System.out.println(lineBreak);
 			System.out.println("ZipCode: " + vz[0].getZipCode() + "\n");
 			for (Vehicle v : vz) {
 				if (!locs.contains(v.getLocationName().toLowerCase())) {
 					locs.add(v.getLocationName().toLowerCase());
+					System.out.println("\t-----------------------------------------------");
 					System.out.println("\tLocation: " + v.getLocationName() + "\n");
 				}
 				
@@ -147,10 +160,12 @@ public class View {
 						+ "\t" + v.getRentalRate() + "\t"
 						+ (v.getVehicleCount() - v.getVehicleRentCount()) + " Available\t"
 						+ v.getVehicleRentCount() + " Rented");
+				
 			}
-			System.out.println("-----------------------------------------------");
+			System.out.println("\t-----------------------------------------------");
+			System.out.println("\n" + lineBreak);
 		}
-		
+		getInput();
 	}
 	
 public static void displayLocationNames(Vehicle[] vehicles) {
