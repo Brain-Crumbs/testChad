@@ -27,49 +27,9 @@ public class Controller {
 				FunctionHandler.removeVehicle();
 			
 			}if(menuOption == Chad.LOCATIONNAMES) {
-				//Vehicle v = new Vehicle();
-				
-				if(menuOption == Chad.LOCATIONNAMES) {
-					//Vehicle v = new Vehicle();
 					
-					View.displayLocationNames(FunctionHandler.getLocations());
-					String locationName = View.getName();
-					while(true) {
-						Chad subMenuOption = View.inputHandler(View.displaySubMenu(locationName));
-
-						if (subMenuOption == Chad.OUTPUTALL) {
-							Vehicle[] vehiclesOut = FunctionHandler.filterByName(new DatabaseHandler().output(), locationName);
-							View.displayOutput(vehiclesOut);
-						}
-						if (subMenuOption == Chad.AVAILABLEVEHICLES) {
-							int noVehicles = FunctionHandler.getAvailableVehicles(locationName);
-							View.displayOutput(noVehicles);
-						}
-						if (subMenuOption == Chad.OUTPUTDAILYRATE) {
-							double dailyRate = FunctionHandler.getDailyRate(locationName);
-							View.displayOutput(dailyRate, subMenuOption);
-						}
-						if (subMenuOption == Chad.DAILYREVENUE) {
-							Double dailyRevenue = FunctionHandler.getDailyRevenue(locationName);
-							View.displayOutput(dailyRevenue, subMenuOption);
-						}
-						if (subMenuOption == Chad.ADDVEHICLE) {
-							FunctionHandler.addVehicle(locationName);
-						}
-						if (subMenuOption == Chad.REMOVEVEHICLE) {
-							FunctionHandler.removeVehicle(locationName);
-						}
-						if (subMenuOption == Chad.ERROR) {
-							View.displayError();
-						}
-						if (subMenuOption == Chad.RETURNTOMAIN) {
-							break;
-						}
-						if (subMenuOption == Chad.QUIT) {
-							View.displayExit();
-						}
-					}
-				}
+				View.displayLocationNames(FunctionHandler.getLocations());
+				subMenuHandler(View.getName());
 			}
 			else {
 				Handler(menuOption);
@@ -86,89 +46,92 @@ public class Controller {
 			View.displayOutput(new DatabaseHandler().output());
 			
 		} else if (menuOption == Chad.ZIPCODE) {
-
-			int zip = Integer.parseInt(View.getZip());
-			
-			
-			while(true) {
-				Chad subMenuOption = View.inputHandler(View.displaySubMenu(zip));
+	
+			subMenuHandler(Integer.parseInt(View.getZip()));
 				
-				if (subMenuOption == Chad.OUTPUTALL) {
-					Vehicle[] vehiclesOut = FunctionHandler.filterByZip(new DatabaseHandler().output(), zip);
-					View.displayOutput(vehiclesOut);
-				}
-				if (subMenuOption == Chad.AVAILABLEVEHICLES) {
-					int noVehicles = FunctionHandler.getAvailableVehicles(zip);
-					View.displayOutput(noVehicles);
-				}
-				if (subMenuOption == Chad.OUTPUTDAILYRATE) {
-					Double dailyRate = FunctionHandler.getDailyRate(zip);
-					View.displayOutput(dailyRate, subMenuOption);
-				}
-				if (subMenuOption == Chad.DAILYREVENUE) {
-					Double dailyRevenue = FunctionHandler.getDailyRevenue(zip);
-					View.displayOutput(dailyRevenue, subMenuOption);
-				}
-				if (subMenuOption == Chad.ADDVEHICLE) {
-					FunctionHandler.addVehicle(zip);
-				}
-				if (subMenuOption == Chad.REMOVEVEHICLE) {
-					FunctionHandler.removeVehicle(zip);
-				}
-				if (subMenuOption == Chad.ERROR) {
-					View.displayError();
-				}
-				if (subMenuOption == Chad.RETURNTOMAIN) {
-					break;
-				}
-				if (subMenuOption == Chad.QUIT) {
-					View.displayExit();
-				}
-			}
-			
-			
 		} else if (menuOption == Chad.NAME) {
 
-			String locationName = View.getName();
-			while(true) {
-				Chad subMenuOption = View.inputHandler(View.displaySubMenu(locationName));
+			subMenuHandler(View.getName());
 
-				if (subMenuOption == Chad.OUTPUTALL) {
-					Vehicle[] vehiclesOut = FunctionHandler.filterByName(new DatabaseHandler().output(), locationName);
-					View.displayOutput(vehiclesOut);
-				}
-				if (subMenuOption == Chad.AVAILABLEVEHICLES) {
-					int noVehicles = FunctionHandler.getAvailableVehicles(locationName);
-					View.displayOutput(noVehicles);
-				}
-				if (subMenuOption == Chad.OUTPUTDAILYRATE) {
-					double dailyRate = FunctionHandler.getDailyRate(locationName);
-					View.displayOutput(dailyRate, subMenuOption);
-				}
-				if (subMenuOption == Chad.DAILYREVENUE) {
-					Double dailyRevenue = FunctionHandler.getDailyRevenue(locationName);
-					View.displayOutput(dailyRevenue, subMenuOption);
-				}
-				if (subMenuOption == Chad.ADDVEHICLE) {
-					FunctionHandler.addVehicle(locationName);
-				}
-				if (subMenuOption == Chad.REMOVEVEHICLE) {
-					FunctionHandler.removeVehicle(locationName);
-				}
-				if (subMenuOption == Chad.ERROR) {
-					View.displayError();
-				}
-				if (subMenuOption == Chad.RETURNTOMAIN) {
-					break;
-				}
-				if (subMenuOption == Chad.QUIT) {
-					View.displayExit();
-				}
-			}
 		}	
 
 	}
-
 	
+	public static void subMenuHandler(String locationName) {
+
+		while(true) {
+			Chad subMenuOption = View.inputHandler(View.displaySubMenu(locationName));
+	
+			if (subMenuOption == Chad.OUTPUTALL) {
+				Vehicle[] vehiclesOut = FunctionHandler.filterByName(new DatabaseHandler().output(), locationName);
+				View.displayOutput(vehiclesOut);
+			}
+			if (subMenuOption == Chad.AVAILABLEVEHICLES) {
+				int noVehicles = FunctionHandler.getAvailableVehicles(locationName);
+				View.displayOutput(noVehicles);
+			}
+			if (subMenuOption == Chad.OUTPUTDAILYRATE) {
+				double dailyRate = FunctionHandler.getDailyRate(locationName);
+				View.displayOutput(dailyRate, subMenuOption);
+			}
+			if (subMenuOption == Chad.DAILYREVENUE) {
+				Double dailyRevenue = FunctionHandler.getDailyRevenue(locationName);
+				View.displayOutput(dailyRevenue, subMenuOption);
+			}
+			if (subMenuOption == Chad.ADDVEHICLE) {
+				FunctionHandler.addVehicle(locationName);
+			}
+			if (subMenuOption == Chad.REMOVEVEHICLE) {
+				FunctionHandler.removeVehicle(locationName);
+			}
+			if (subMenuOption == Chad.ERROR) {
+				View.displayError();
+			}
+			if (subMenuOption == Chad.RETURNTOMAIN) {
+				break;
+			}
+			if (subMenuOption == Chad.QUIT) {
+				View.displayExit();
+			}
+		}
+	}
+
+	public static void subMenuHandler(int zip) {
+		while(true) {
+			Chad subMenuOption = View.inputHandler(View.displaySubMenu(zip));
+			
+			if (subMenuOption == Chad.OUTPUTALL) {
+				Vehicle[] vehiclesOut = FunctionHandler.filterByZip(new DatabaseHandler().output(), zip);
+				View.displayOutput(vehiclesOut);
+			}
+			if (subMenuOption == Chad.AVAILABLEVEHICLES) {
+				int noVehicles = FunctionHandler.getAvailableVehicles(zip);
+				View.displayOutput(noVehicles);
+			}
+			if (subMenuOption == Chad.OUTPUTDAILYRATE) {
+				Double dailyRate = FunctionHandler.getDailyRate(zip);
+				View.displayOutput(dailyRate, subMenuOption);
+			}
+			if (subMenuOption == Chad.DAILYREVENUE) {
+				Double dailyRevenue = FunctionHandler.getDailyRevenue(zip);
+				View.displayOutput(dailyRevenue, subMenuOption);
+			}
+			if (subMenuOption == Chad.ADDVEHICLE) {
+				FunctionHandler.addVehicle(zip);
+			}
+			if (subMenuOption == Chad.REMOVEVEHICLE) {
+				FunctionHandler.removeVehicle(zip);
+			}
+			if (subMenuOption == Chad.ERROR) {
+				View.displayError();
+			}
+			if (subMenuOption == Chad.RETURNTOMAIN) {
+				break;
+			}
+			if (subMenuOption == Chad.QUIT) {
+				View.displayExit();
+			}
+		}
+	}
 
 }

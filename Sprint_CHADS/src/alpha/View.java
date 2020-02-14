@@ -147,6 +147,7 @@ public class View {
 		List<String> locs = new ArrayList<String>();
 		List<Integer> zips = new ArrayList<Integer>();
 		List<Vehicle[]> vZip = new ArrayList<Vehicle[]>();
+		List<Vehicle[]> vLoc = null;
 		String lineBreak = "-------------------------------------------------------";
 		
 		for (Vehicle v : vehicles) {
@@ -159,18 +160,23 @@ public class View {
 		for (Vehicle[] vz : vZip) {
 			System.out.println(lineBreak);
 			System.out.println("ZipCode: " + vz[0].getZipCode() + "\n");
+			vLoc = new ArrayList<Vehicle[]>();
 			for (Vehicle v : vz) {
 				if (!locs.contains(v.getLocationName().toLowerCase())) {
 					locs.add(v.getLocationName().toLowerCase());
-					System.out.println("\t-----------------------------------------------");
-					System.out.println("\tLocation: " + v.getLocationName() + "\n");
+					vLoc.add(FunctionHandler.filterByName(vehicles, v.getLocationName()));
 				}
-				
-				System.out.println("\t" + v.getMake() + "" + v.getModel()
-						+ "\t" + v.getRentalRate() + "\t"
-						+ (v.getVehicleCount() - v.getVehicleRentCount()) + " Available\t"
-						+ v.getVehicleRentCount() + " Rented");
-				
+			}
+			
+			for (Vehicle[] vl : vLoc) {
+				System.out.println("\t-----------------------------------------------");
+				System.out.println("\tLocation: " + vl[0].getLocationName() + "\n");
+				for (Vehicle v : vl) {
+					System.out.println("\t" + v.getMake() + "" + v.getModel()
+					+ "\t" + v.getRentalRate() + "\t"
+					+ (v.getVehicleCount() - v.getVehicleRentCount()) + " Available\t"
+					+ v.getVehicleRentCount() + " Rented");
+				}
 			}
 			System.out.println("\t-----------------------------------------------");
 			System.out.println("\n" + lineBreak);
