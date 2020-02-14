@@ -11,7 +11,7 @@ public class Controller {
 	public static void main(String[] args) {
 
 		while (true) {
-
+			View.clear();
 
 			Chad menuOption = View.inputHandler(View.displayMenu());
 			if (menuOption == Chad.QUIT) {
@@ -64,6 +64,7 @@ public class Controller {
 	public static void subMenuHandler(String locationName) {
 
 		while(true) {
+			View.clear();
 			Chad subMenuOption = View.inputHandler(View.displaySubMenu(locationName));
 	
 			if (subMenuOption == Chad.OUTPUTALL) {
@@ -104,6 +105,7 @@ public class Controller {
 
 	public static void subMenuHandler(int zip) {
 		while(true) {
+			View.clear();
 			Chad subMenuOption = View.inputHandler(View.displaySubMenu(zip));
 			
 			if (subMenuOption == Chad.OUTPUTALL) {
