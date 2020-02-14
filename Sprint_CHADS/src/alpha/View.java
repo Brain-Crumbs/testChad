@@ -18,9 +18,9 @@ public class View {
 		case "0": return Chad.DISPLAYALL;
 		case "1": return Chad.LOCATIONNAMES;
 		case "2": return Chad.NAME;
-		case "4": return Chad.ZIPCODE;
-		case "5": return Chad.ADDVEHICLE;
-		case "6": return Chad.REMOVEVEHICLE;
+		case "3": return Chad.ZIPCODE;
+		case "4": return Chad.ADDVEHICLE;
+		case "5": return Chad.REMOVEVEHICLE;
 		case "sub.0": return Chad.OUTPUTALL;
 		case "sub.1": return Chad.OUTPUTDAILYRATE;
 		case "sub.2": return Chad.DAILYREVENUE;
@@ -175,6 +175,7 @@ public class View {
 			System.out.println("\t-----------------------------------------------");
 			System.out.println("\n" + lineBreak);
 		}
+		System.out.println("Press Enter To Continue");
 		getInput();
 	}
 	
