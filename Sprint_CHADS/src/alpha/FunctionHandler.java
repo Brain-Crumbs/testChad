@@ -3,8 +3,7 @@ package alpha;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 //brah
 public class FunctionHandler {
 	
@@ -101,22 +100,14 @@ public class FunctionHandler {
 		return dailyRevenue;
 	}
 
-	static Vehicle[] getLocations() {
+	static HashSet<String> getLocations() {
 		Vehicle[] veh = new DatabaseHandler().output();
-		List<Vehicle> v = new ArrayList<Vehicle>();
-		//String list = "";
-		int count = 0;
-		for(Vehicle temp : veh) {
-			if(!v.contains(temp.getLocationName())) {
-				count++;
-				v.add(temp);
-			}
+		HashSet<String> locations = new HashSet<String>();
+		
+		for(Vehicle v : veh) {
+			locations.add(v.getLocationName());
 		}
-		Vehicle[] veh2 = new Vehicle[count];
-		for(int i = 0; i < v.size(); i++) {
-			veh2[i] = v.get(i);
-		}
-		return veh2;
+		return locations;
 	}
 	
 	static void addVehicle() {

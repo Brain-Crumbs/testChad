@@ -3,4 +3,4 @@
 32.6,Tacoma1,98409,Ford,Focus,50,28
 30.2,Seattle2,98444,Ford,Focus,20,10
 29.6,Tacoma2,98409,Subaru,Impreza,40,10
-54.5,Bellevue,98004,Mercedez,Benz,10,6
+54.5,Bellevue,98004,Mercedez,Benz,10,

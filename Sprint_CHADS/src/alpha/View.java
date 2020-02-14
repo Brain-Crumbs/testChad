@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Scanner;
 
 public class View {
 	
@@ -87,6 +87,16 @@ public class View {
 		}
 		return "sub." + input;
 	}
+	
+	public static void displayLocationNames(HashSet<String> hashSet) {
+		
+		//for(Vehicle vehicle : vehicles) {
+		//if(Chad.LOCATIONNAMES != null) {
+			System.out.println("------------Locations------------\n");
+			System.out.println(FunctionHandler.getLocations() + "\n ");
+			System.out.println("-------------------------------\n");
+		//}
+		}
 	
 	public static String displaySubMenu(int zip) {
 		return displaySubMenu( "" + zip );
