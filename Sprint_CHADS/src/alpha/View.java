@@ -179,7 +179,7 @@ public class View {
 		getInput();
 	}
 	
-public static void displayLocationNames(Vehicle[] vehicles) {
+	public static void displayLocationNames(Vehicle[] vehicles) {
 		
 		//for(Vehicle vehicle : vehicles) {
 		//if(Chad.LOCATIONNAMES != null) {
