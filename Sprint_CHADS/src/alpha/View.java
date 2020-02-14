@@ -17,16 +17,13 @@ public class View {
 		switch(input) {
 		case "0": return Chad.DISPLAYALL;
 		case "1": return Chad.LOCATIONNAMES;
-		case "2": return Chad.NAME;
-		case "3": return Chad.ZIPCODE;
-		case "4": return Chad.ADDVEHICLE;
-		case "5": return Chad.REMOVEVEHICLE;
+		case "2": return Chad.ZIPCODE;
+		case "3": return Chad.ADDVEHICLE;
+		case "4": return Chad.REMOVEVEHICLE;
 		case "sub.0": return Chad.OUTPUTALL;
-		case "sub.1": return Chad.OUTPUTDAILYRATE;
-		case "sub.2": return Chad.DAILYREVENUE;
-		case "sub.3": return Chad.AVAILABLEVEHICLES;
-		case "sub.4": return Chad.ADDVEHICLE;
-		case "sub.5": return Chad.REMOVEVEHICLE;
+		case "sub.1": return Chad.DAILYREVENUE;
+		case "sub.2": return Chad.ADDVEHICLE;
+		case "sub.3": return Chad.REMOVEVEHICLE;
 		case "sub.r": return Chad.RETURNTOMAIN;
 		default:  
 			if (input.equalsIgnoreCase("q") || input.equalsIgnoreCase("sub.q")) {
@@ -44,13 +41,12 @@ public class View {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.println("-------Welcome to TravelWithChad.com BackOffice-------\n");
-		System.out.println("Display all rentals:        Enter 0");
-		System.out.println("See all locations:          Enter 1");
-		System.out.println("Search rentals by location: Enter 2");
-		System.out.println("Search rentals by zipcode:  Enter 3");
-		System.out.println("Add Vehicle:                Enter 4");
-		System.out.println("Remove Vehicle:             Enter 5");
-		System.out.println("Quit:                       Enter Q");
+		System.out.println("Display all rentals: Enter 0");
+		System.out.println("Search by location:  Enter 1");
+		System.out.println("Search by zipcode:   Enter 2");
+		System.out.println("Add Vehicle:         Enter 3");
+		System.out.println("Remove Vehicle:      Enter 4");
+		System.out.println("Quit:                Enter Q");
 		System.out.println();
 		
 		String input = "";
@@ -71,11 +67,9 @@ public class View {
 		System.out.println("Showing results for : " + locationName);
 		System.out.println();
 		System.out.println("Display all rentals:                   Enter 0");
-		System.out.println("Display Daily Rates:                   Enter 1");
-		System.out.println("Display Daily Revenue:                 Enter 2");
-		System.out.println("Display Number of Available Vehicles:  Enter 3");
-		System.out.println("Add Vehicle:                           Enter 4");
-		System.out.println("Remove Vehicle:                        Enter 5");
+		System.out.println("Display Daily Revenue:                 Enter 1");
+		System.out.println("Add Vehicle:                           Enter 2");
+		System.out.println("Remove Vehicle:                        Enter 3");
 		System.out.println("Return to Main Menu:                   Enter R");
 		System.out.println("Quit:                                  Enter Q");
 		System.out.println();
@@ -173,7 +167,7 @@ public class View {
 				System.out.println("\t-----------------------------------------------");
 				System.out.println("\tLocation: " + vl[0].getLocationName() + "\n");
 				for (Vehicle v : vl) {
-					System.out.println("\t" + v.getMake() + "" + v.getModel()
+					System.out.println("\t" + v.getMake() + " " + v.getModel()
 					+ "\t" + v.getRentalRate() + "\t"
 					+ (v.getVehicleCount() - v.getVehicleRentCount()) + " Available\t"
 					+ v.getVehicleRentCount() + " Rented");

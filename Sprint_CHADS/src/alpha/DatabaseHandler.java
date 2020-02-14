@@ -26,7 +26,7 @@ public class DatabaseHandler {
 			
 			fw = new FileWriter(fileCar, true);
 			bw = new BufferedWriter(fw);
-			bw.write(v.toString()+ "\n");
+			bw.write("\n" +v.toString());
 			bw.close();
 			fw.close();
 		} catch (IOException e) {

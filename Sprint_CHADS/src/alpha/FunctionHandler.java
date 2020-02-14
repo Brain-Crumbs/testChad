@@ -25,7 +25,6 @@ public class FunctionHandler {
 		return output;
 	}
 	
-
 	static Vehicle[] filterByName(Vehicle[] v, String locationName) {
 		int size = 0;
 		for (int i = 0; i < v.length; i++) {

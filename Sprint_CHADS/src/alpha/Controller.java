@@ -29,37 +29,26 @@ public class Controller {
 			if (menuOption == Chad.REMOVEVEHICLE) {
 
 				FunctionHandler.removeVehicle();
-			
-			}if(menuOption == Chad.LOCATIONNAMES) {
+			}
+			if(menuOption == Chad.LOCATIONNAMES) {
 	
 				View.displayLocationNames(FunctionHandler.getLocations());
 				subMenuHandler(View.getName());
 			}
-			else {
-				Handler(menuOption);
+			if (menuOption == Chad.DISPLAYALL) {
+
+				View.displayOutput(new DatabaseHandler().output());
+				
+			} 
+			if (menuOption == Chad.ZIPCODE) {
+
+				subMenuHandler(Integer.parseInt(View.getZip()));
 			}
 
 		}
 
 	}
 
-	public static void Handler(Chad menuOption) {
-
-		if (menuOption == Chad.DISPLAYALL) {
-
-			View.displayOutput(new DatabaseHandler().output());
-			
-		} else if (menuOption == Chad.ZIPCODE) {
-
-			subMenuHandler(Integer.parseInt(View.getZip()));
-				
-		} else if (menuOption == Chad.NAME) {
-
-			subMenuHandler(View.getName());
-
-		}	
-
-	}
 	
 	public static void subMenuHandler(String locationName) {
 
