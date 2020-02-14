@@ -143,7 +143,7 @@ public static void displayLocationNames(Vehicle[] vehicles) {
 		//}
 		}
 	
-	
+	//hello
 	public static void displayOutput(int noVehicles) {
 			
 			System.out.println("---NUMBER AVAILABLE RENTALS---\n");
